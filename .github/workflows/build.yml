@@ -34,7 +34,7 @@ jobs:
             make_platform: rpi3-sdl2
           - platform: linux/arm/v7
             make_platform: rpi2-sdl2
-          - platform: linux/arm/v6
+          - platform: linux/arm/v7
             make_platform: rpi1-sdl2
     steps:
       -
