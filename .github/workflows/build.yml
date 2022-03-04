@@ -28,9 +28,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - platform: linux/arm64
+          - platform: linux/arm/v7
             make_platform: rpi4
-          - platform: linux/arm64
+          - platform: linux/arm/v7
             make_platform: rpi3
           - platform: linux/arm/v7
             make_platform: rpi2
