@@ -59,8 +59,7 @@ jobs:
         with:
           context: .github/workflows
           platforms: ${{ matrix.platform }}
-          build-args:
-            PLATFORM: ${{ matrix.make_platform }}
+          build-args: PLATFORM=${{ matrix.make_platform }}
           outputs: "type=tar,dest=image.tar"
       -
         name: Show it
