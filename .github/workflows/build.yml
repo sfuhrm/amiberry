@@ -71,11 +71,17 @@ jobs:
           tar -tvf image.tar
           
       -
-        name: Extract shared library
+        name: Extract executable
         run: |
-          echo tar --wildcards -xvf image.tar build/amiberry
+          tar --wildcards -xvf image.tar build/amiberry
+          cp build/amiberry amiberry_${{ matrix.make_platform }}
 
       - uses: actions/upload-artifact@v2
         with:
           name: amiberry_${{ matrix.make_platform }}
-          path: build/amiberry
+          path: amiberry_${{ matrix.make_platform }}
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: amiberry_all
+          path: amiberry_${{ matrix.make_platform }}
