@@ -30,6 +30,9 @@ jobs:
       matrix:
         include:
           - platform: linux/arm/v7
+            make_platform: rpi4
+            extra_debs: libraspberrypi-dev libraspberrypi0
+          - platform: linux/arm/v7
             make_platform: rpi4-sdl2
           - platform: linux/arm/v7
             make_platform: rpi3-sdl2
@@ -84,7 +87,7 @@ jobs:
         with:
           context: .
           platforms: ${{ matrix.platform }}
-          build-args: PLATFORM=${{ matrix.make_platform }}
+          build-args: PLATFORM=${{ matrix.make_platform }},EXTRA_DEBS=${{ matrix.extra_debs }}
           outputs: "type=tar,dest=image.tar"
       -
         name: Show it
