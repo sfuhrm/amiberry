@@ -23,6 +23,7 @@ jobs:
         name: Available platforms
         run: echo ${{ steps.qemu.outputs.platforms }}
 
+  # https://github.com/midwan/amiberry/wiki/Available-Platforms
   qemu_platform_object_files:
     runs-on: ubuntu-latest
     strategy:
@@ -30,6 +31,19 @@ jobs:
         include:
           - platform: linux/arm/v7
             make_platform: xu4
+          - platform: linux/arm/v7
+            make_platform: rpi4-sdl2
+          - platform: linux/arm/v7
+            make_platform: rpi3-sdl2
+          - platform: linux/arm/v7
+            make_platform: rpi2-sdl2
+          - platform: linux/arm/v7
+            make_platform: rpi1-sdl2
+          - platform: linux/arm64
+            make_platform: rpi4-64-sdl2
+          - platform: linux/arm64
+            make_platform: rpi3-64-sdl2
+
     steps:
       -
         name: Checkout
