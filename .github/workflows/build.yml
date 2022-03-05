@@ -29,13 +29,7 @@ jobs:
       matrix:
         include:
           - platform: linux/arm/v7
-            make_platform: rpi4-sdl2
-          - platform: linux/arm/v7
-            make_platform: rpi3-sdl2
-          - platform: linux/arm/v7
-            make_platform: rpi2-sdl2
-          - platform: linux/arm/v7
-            make_platform: rpi1-sdl2
+            make_platform: xu4
     steps:
       -
         name: Checkout
@@ -76,12 +70,12 @@ jobs:
           ls -alR image.tar
           tar -tvf image.tar
           
-#      -
-#        name: Extract shared library
-#        run: |
-#          echo tar --wildcards -xvf image.tar openssl4j/target/libopenssl4j-*.so
+      -
+        name: Extract shared library
+        run: |
+          echo tar --wildcards -xvf image.tar build/amiberry
 
-#      - uses: actions/upload-artifact@v2
-#        with:
-#          name: shared_objects
-#          path: openssl4j/target/*.so
+      - uses: actions/upload-artifact@v2
+        with:
+          name: amiberry_${{ matrix.make_platform }}
+          path: build/amiberry
