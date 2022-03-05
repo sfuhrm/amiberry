@@ -87,7 +87,9 @@ jobs:
         with:
           context: .
           platforms: ${{ matrix.platform }}
-          build-args: PLATFORM=${{ matrix.make_platform }},EXTRA_DEBS=${{ matrix.extra_debs }}
+          build-args: |
+            PLATFORM=${{ matrix.make_platform }}
+            EXTRA_DEBS=${{ matrix.extra_debs }}
           outputs: "type=tar,dest=image.tar"
       -
         name: Show it
