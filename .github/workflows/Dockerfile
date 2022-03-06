@@ -1,6 +1,7 @@
 FROM ubuntu:20.04
 ARG PLATFORM=rpi2
 ARG GCCVER=10
+ARG MAKEOPTS=-j1
 ARG EXTRA_DEBS=
 RUN apt-get update && \
 apt-get install --yes libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 \
@@ -9,4 +10,4 @@ $EXTRA_DEBS
 RUN apt-get install --yes make gcc-$GCCVER g++-$GCCVER
 RUN mkdir /build
 COPY . /build
-RUN cd /build && make -j8 CC=gcc-$GCCVER CXX=g++-$GCCVER PLATFORM=$PLATFORM
+RUN cd /build && make $MAKEOPTS CC=gcc-$GCCVER CXX=g++-$GCCVER PLATFORM=$PLATFORM
