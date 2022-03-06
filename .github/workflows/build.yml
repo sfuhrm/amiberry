@@ -1,4 +1,4 @@
-name: Platform Build
+name: QEMU Build
 
 on: push
 
@@ -6,7 +6,7 @@ env:
   QEMU_IMAGE: tonistiigi/binfmt:qemu-v5.0.1
 
 jobs:
-  qemu_show_platform_info:
+  qemu_platform_info:
     runs-on: ubuntu-latest
     steps:
       -
@@ -24,7 +24,7 @@ jobs:
         run: echo ${{ steps.qemu.outputs.platforms }}
 
   # https://github.com/midwan/amiberry/wiki/Available-Platforms
-  qemu_platform_build:
+  qemu_build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
