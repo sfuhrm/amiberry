@@ -64,8 +64,8 @@ jobs:
             make_platform: AMLG12A
           - platform: linux/arm/v7
             make_platform: AMLG12B
-          - platform: linux/arm/v7
-            make_platform: AMLSM1
+          #- platform: linux/arm/v7
+          #  make_platform: AMLSM1
           - platform: linux/arm64
             make_platform: oga
           - platform: linux/arm64
