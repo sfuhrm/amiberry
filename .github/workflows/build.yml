@@ -58,8 +58,8 @@ jobs:
             make_platform: AMLGXBB
           - platform: linux/arm/v7
             make_platform: AMLGXL
-          - platform: linux/arm/v7
-            make_platform: AMLGXM
+          #- platform: linux/arm/v7
+          #  make_platform: AMLGXM
           - platform: linux/arm/v7
             make_platform: AMLG12A
           - platform: linux/arm/v7
