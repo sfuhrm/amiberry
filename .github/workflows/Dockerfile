@@ -7,7 +7,7 @@ ARG EXTRA_DEBS=
 ENV TZ=UTC
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN echo "cpuinfo" && cat /proc/cpuinfo && echo "uname -a" && uname -a
+RUN echo "cpuinfo" && cat /proc/cpuinfo && echo "uname -a" && uname -a && echo "as --help" && as --help
 
 RUN apt-get update && \
 apt-get install --no-install-recommends --yes libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 flac mpg123 libmpeg2-4 \
